@@ -38,10 +38,10 @@ public:
         		}
         	} else{
         		repeatTime ++;
-        		if(repeatTime > maxRepeat){
-        			maxRepeat = repeatTime;
-        		}
         	}
+            if(repeatTime > maxRepeat){
+                maxRepeat = repeatTime;
+            }
         }
 
         //if the longest string is in the last
