@@ -21,6 +21,7 @@ public:
         int size = str.size();
         int result = 0;
         int multi = 1;
+        int start = 0;
         bool ifStart = false;
         bool ifMinus = false;
         bool ifOverflow = false;
@@ -35,6 +36,7 @@ public:
         				continue;
         			} else if((str[i] >= '0' && str[i] <= '9') || str[i] == '-' || str[i] == '+'){
         				ifStart = true;
+        				start = i;
         			} else{
         				return 0;
         			}
@@ -49,38 +51,42 @@ public:
         	}
         }
         
-        for(int i = size - 1; i != -1; i --){
+        for(int i = size - 1; i != start; i --){
         	if(str[i] >= '0' && str[i] <= '9'){
         		result += (str[i] - '0') * multi;
         		multi = multi * 10;
-        	} else if(str[i] == '-'){
-        		result = 0 - result;
-        		ifMinus = true;
-        	} else if(str[i] == '+'){
-        		///*nothing to do
-        	} else if(str[i] == ' '){
-        		continue;
-        	} else{
-        		return 0;
         	}
-
-        	if(i == size - 10 && ((str[i] > '2' && str[i] <= '9') || (result < 0 && !ifMinus))){
+        	if(result < 0){
         		ifOverflow = true;
-        		cout << str[i] << endl;
-        	} else if(i == size - 11 && str[i] <= '9' && str[i] >= '0'){
-        		ifOverflow = true;
-        		cout << "2" << endl;
         	}
         }
 
+        if(str[start] == '-'){
+        	result = 0 - result;
+        	ifMinus = true;
+        	start ++;
+        } else if(str[start] == '+'){
+        	start ++;
+        } else{
+        	result += (str[start] - '0') * multi;
+        	if(result < 0){
+        		ifOverflow = true;
+        	}
+        }
 
-        
+        //if overflow
+        if(start <= size - 11){
+        	ifOverflow = true;
+        } else if(start == size - 10 && str[start] > '2' && str[start] <= '9'){
+        	ifOverflow = true;
+        }
+              
         if(!ifMinus){
         	if(ifOverflow){
         		return 2147483647;
         	}
         } else{
-        	if(ifOverflow || result > 0){
+        	if(ifOverflow){
         		return -2147483648;
         	}
         }
