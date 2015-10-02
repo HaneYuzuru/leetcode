@@ -27,3 +27,7 @@ String to Integer (atoi):
 Binary Tree Inorder Traversal:
 	1.使用了递归算法，因为非递归并没有想出来（垢
 	2.传参数方面出了一点问题
+
+Unique Binary Search Trees:
+	1.可以用递归的思想，不同根结点情况下叶结点组合情况可由之前计算所得的叶结点数计算得出
+	2.使用数组方式存储途径所有结果是为了避免重复计算，在两边相同结点数的处理方法上优点不优雅（。
