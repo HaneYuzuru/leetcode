@@ -30,7 +30,7 @@ public:
         } else if(p == NULL || q == NULL){
         	return false;
         } else{
-        	result = isSame(p, q);
+        	result = ifSame(p, q);
         }
         return result;
     }
