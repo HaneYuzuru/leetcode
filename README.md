@@ -37,3 +37,7 @@ Same Tree:
 
 Symmetric Tree:
 	1.同上
+
+Binary Tree Level Order Traversal:
+	1.可以通过保留两个queue来提高效率
+	2.实现的时候其实可以不在循环中声明将要push到vector中的vector，因为不是push进指针，所以下一次对同一个vector对象的改写其实不会影响到已经在别的vector中的前一次push进的vector（我的表述能力。。。。
