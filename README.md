@@ -48,3 +48,4 @@ Binary Tree Level Order Traversal II:
 
 Balanced Binary Tree:
 	1.初版使用了map，性能不佳，换成unordered_map以后有些许提升
+	2.第二版直接递归算法，性能有比较大的提升，如果吧每个叶结点看成深度为2，即node为null的时候返回深度为1时，性能还会有所提升，这时候因为0可以代表bool中的false原函数返回值也可以变为返回depth(root)

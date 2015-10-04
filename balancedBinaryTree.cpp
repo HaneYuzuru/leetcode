@@ -33,38 +33,32 @@ struct TreeNode
 class Solution {
 public:
     bool isBalanced(TreeNode* root) {
-    	map<TreeNode*, int> treeDepth;
         if(root == NULL){
         	return true;
         } else{
-        	return depth(root, treeDepth);
+            int result = depth(root);
+            if(result == -1){
+                return false;
+            } else{
+                return true;
+            }
         }
     }
-
-    bool depth(TreeNode *node, map<TreeNode*, int> &treeDepth){
-    	bool result = true;
+    
+    int depth(TreeNode *node){
     	int leftdepth = 0;
     	int rightdepth = 0;
-    	if(node -> left != NULL){
-    		if(treeDepth.find(node -> left) == treeDepth.end()){
-    			result = result && depth(node -> left, treeDepth);
-    		}
-    		leftdepth = treeDepth.find(node -> left) -> second;
-    	}
-
-    	if(node -> right != NULL){
-    		if(treeDepth.find(node -> right) == treeDepth.end()){
-    			result = result && depth(node -> right, treeDepth);
-    		}
-    		rightdepth = treeDepth.find(node -> right) -> second;
-    	}
-
-    	treeDepth[node] = (leftdepth > rightdepth ? leftdepth : rightdepth) + 1;
-
-    	if(abs(leftdepth - rightdepth) > 1){
-    		return false;
+    	
+    	if(node == NULL){
+    	    return 0;
     	} else{
-    		return result;
+    	    leftdepth = depth(node -> left);
+    	    rightdepth = depth(node -> right);
+    	    if(leftdepth == -1 || rightdepth == -1 || abs(leftdepth - rightdepth) > 1){
+    	        return -1;
+    	    } else{
+    	        return max(rightdepth, leftdepth) + 1;
+    	    }
     	}
     }
 };
