@@ -56,3 +56,7 @@ Minimum Depth of Binary Tree:
 
 Maximum Depth of Binary Tree:
 	1.没什么难度
+
+Binary Tree Zigzag Level Order Traversal:
+	1.使用deque方便操作
+	2.注意不能在循环中使用nodeQ.size()，因为nodeq的push操作改变了队伍的size，会产生segmentation fault
