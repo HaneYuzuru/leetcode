@@ -45,3 +45,6 @@ Binary Tree Level Order Traversal:
 Binary Tree Level Order Traversal II:
 	1.初版用了stack存放原本的顺序level排序
 	2.会再版提高性能
+
+Balanced Binary Tree:
+	1.初版使用了map，性能不佳，换成unordered_map以后有些许提升
