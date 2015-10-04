@@ -53,3 +53,6 @@ Balanced Binary Tree:
 Minimum Depth of Binary Tree:
 	1.使用了深度优先算法，没什么好说的
 	2.关于提高性能，看到一个答案想法很好，使用level遍历的方式，找到第一个叶结点返回已经遍历的层数
+
+Maximum Depth of Binary Tree:
+	1.没什么难度
