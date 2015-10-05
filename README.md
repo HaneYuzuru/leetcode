@@ -63,3 +63,6 @@ Binary Tree Zigzag Level Order Traversal:
 
 Invert Binary Tree:
 	1.没有难度
+
+Binary Search Tree Iterator:
+	1.用一个栈作为成员变量，初始化时存入当前序列的node次序，每次pop出最小的值即可
