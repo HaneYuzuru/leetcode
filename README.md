@@ -66,3 +66,6 @@ Invert Binary Tree:
 
 Binary Search Tree Iterator:
 	1.用一个栈作为成员变量，初始化时存入当前序列的node次序，每次pop出最小的值即可
+
+Flatten Binary Tree to Linked List:
+	1.没什么难度 注意不要出现segmentation fault就好～
