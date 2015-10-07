@@ -69,3 +69,7 @@ Binary Search Tree Iterator:
 
 Flatten Binary Tree to Linked List:
 	1.没什么难度 注意不要出现segmentation fault就好～
+
+Construct Binary Tree from Preorder and Inorder Traversal:
+	1.使用递归根据前序遍历找出每个子树根节点，和中序遍历结合将数值分成左右子树两部分并进行递归。
+	2.有性能更加好的解法，还没看
