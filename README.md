@@ -76,3 +76,6 @@ Construct Binary Tree from Preorder and Inorder Traversal:
 
 Convert Sorted Array to Binary Search Tree:
 	1.无难度
+
+Binary Tree Right Side View:
+	1.使用level遍历的方式，否则会忽略不相邻两棵树右边的树高度较小的情况。
